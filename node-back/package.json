@@ -1,0 +1,36 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "a restful apithat fetches the data in the provided MongoDB collection and return the results in the requested format.",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "NODE_ENV=test jest --detectOpenHandles"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "mocha": "^7.2.0",
+    "mongodb": "^3.5.8",
+    "mongoose": "^5.9.18",
+    "validator": "^13.0.0"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}

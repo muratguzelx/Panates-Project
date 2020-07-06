@@ -1,0 +1,66 @@
+
+.list-screen .listed-items{
+  border: 1px solid #bebebe;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+}
+.list-screen .listed-items input {
+  outline: none;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #bebebe;
+}
+.list-screen .listed-items input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  box-shadow: 0 4px 2px -2px #949090;
+
+}
+
+.list-screen .listed-items .item {
+  text-align: center;
+  border-bottom: 1px solid #bebebe;
+}
+
+
+.list-screen .content-container .picture_img-container .picture-img {
+  height: 290px;
+  width: 100%;
+}
+.list-screen .content-container  .review-score {
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+.list-screen .content-container .reviews-container {
+  border-right: 1px solid #bebebe;
+  padding-right: 40px;
+}
+.list-screen .content-container .reviews-container .reviews-list .review .header {
+  margin-bottom: 10px;
+}
+.list-screen .content-container .reviews-container .title {
+  font-weight: 600;
+}
+
+.list-screen .host-container .header .name {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.list-screen .host-container .header .host-picture-url {
+  width: 90px;
+  border-radius: 50%;
+}
+.list-screen .host-container .header .host-name {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.list-screen .host-container .host-information .summary {
+  margin-top: 12px;
+}

@@ -1,0 +1,130 @@
+<div class="list-screen">
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="listed-items">
+        <input type="text" class="form-control mb-0" placeholder="Search..." (keyup)="onKey($event)">
+        <div class="item" *ngFor="let item of filteredItems">
+          <a class="btn btn-link w-100" (click)="onSelectItem(item)">{{ item.name }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div class="content-container">
+        <div *ngIf="!selectedItem" class="alert alert-info">
+          Please select one from left.
+        </div>
+        <div *ngIf="selectedItem">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="picture_img-container">
+                <img class="picture-img" src={{selectedItem.images.picture_url}} alt="picture_img" />
+              </div>
+              <div class="review-score">
+                <span>Review Score: </span>
+                <span>7</span>
+              </div>
+              <div class="reviews-container">
+                <div class="title">Reviews:</div>
+                <hr class="mt-2" />
+                <div class="alert alert-warning" *ngIf="selectedItem.reviews.length == 0">
+                  No comment.
+                </div>
+                <div class="reviews-list" *ngFor="let review of selectedItem.reviews">
+                  <div class="review">
+                    <div class="header d-flex justify-content-between">
+                      <div> {{review.reviewer_name}} </div>
+                      <div> {{review.date.substring(0,10)}} </div>
+                    </div>
+                    <p class="comment">
+                      {{review.comments}}
+                    </p>
+                  </div>
+                  <hr />
+                </div>
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="host-container">
+                <div class="header d-flex justify-content-between align-items-center">
+                  <div class="wrapper1">
+                    <div class="name">
+                      {{selectedItem.name}}
+                    </div>
+                    <div class="host-location">
+                      {{selectedItem.host.host_location}}
+                    </div>
+                  </div>
+                  <div class="wrapper2">
+                    <img class="host-picture-url" src={{selectedItem.host.host_picture_url}} alt="host.picture_url" />
+                    <div class="host-name">{{selectedItem.host.host_name}}</div>
+                  </div>
+                </div>
+                <hr />
+                <div class="host-information">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-9">
+                      <div class="d-flex flex-wrap justify-content-between mb-1">
+                        <div><span class="">Accommodates: </span>{{selectedItem.accommodates}}</div>
+                        <div><span class="">Bedrooms: </span>{{selectedItem.bedrooms}}</div>
+                      </div>
+                      <div class="d-flex flex-wrap justify-content-between mb-1">
+                        <div><span class="">Bathrooms: </span>{{selectedItem.bathrooms}}</div>
+                        <div><span class="">Beds: </span>{{selectedItem.beds}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="summary">
+                    {{selectedItem.summary}}
+                  </p>
+                  <p class="space">
+                    {{selectedItem.space}}
+                  </p>
+                  <hr />
+                  <div class="amenities">
+                    <div class="title mb-2">amenities</div>
+                    <ul class="row">
+                      <li *ngFor="let amenitiy of selectedItem.amenities" class="item col-lg-6">
+                        {{amenitiy}}
+                      </li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="price d-flex justify-content-between">
+                    <div class="daily-price">
+                      <div class="mb-1">Daily Price</div>
+                      <div class="price">{{selectedItem.price && selectedItem.price.$numberDecimal}} $</div>
+                    </div>
+                    <div class="weekly-price">
+                      <div class="mb-1">Weekly Price</div>
+                      <div class="price">{{selectedItem.weekly_price && selectedItem.weekly_price.$numberDecimal}} $
+                      </div>
+                    </div>
+                    <div class="monthly-price">
+                      <div class="mb-1">Monthly Price</div>
+                      <div class="price">{{selectedItem.monthly_price && selectedItem.monthly_price.$numberDecimal}} $
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="location">
+                    <div class="location-title">Address:</div>
+                    <div class="location-street">{{selectedItem.address.street}}</div>
+                    <div class="location-suburb">{{selectedItem.address.suburb}}</div>
+                    <div class="location-country">{{selectedItem.address.country}}</div>
+                    <div class="location-market">{{selectedItem.address.market}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
